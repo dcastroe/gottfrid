@@ -1,76 +1,27 @@
-function showPage(page) {
-	$("#content").slideUp();
-	window.setTimeout(function() {
-		var request = new XMLHttpRequest();
-		request.open("GET", page + ".html", true);
-		request.send();
-		request.onreadystatechange = function() {
-			if(request.readyState == 4 && request.status == 200) {
-				document.getElementById("content").innerHTML = request.responseText;
-				$("#content").slideDown();
-			}
-		}
-	}, 500);
-}
+$(document).ready(function() {
+	showPage();
 
-function showMunkar() {
-	$("#content").slideUp();
-	window.setTimeout(function() {
-		var request = new XMLHttpRequest();
-		request.open("GET", "products.html", true);
-		request.send();
-		request.onreadystatechange = function() {
-			if(request.readyState == 4 && request.status == 200) {
-				document.getElementById("content").innerHTML = request.responseText;
-				$("#content").slideDown();
-			}
-		}
-	}, 500);
-}
+});
 
-function showabout() {
-	$("#content").slideUp();
-	window.setTimeout(function() {
-		var request = new XMLHttpRequest();
-		request.open("GET", "about.html", true);
-		request.send();
-		request.onreadystatechange = function() {
-			if(request.readyState == 4 && request.status == 200) {
-				document.getElementById("content").innerHTML = request.responseText;
-				$("#content").slideDown();
-			}
-		}
-	},500);
-}
 
-function showleveransvillkor() {
-	$("#content").slideUp();
-	window.setTimeout(function() {       
-		var request = new XMLHttpRequest();
-		request.open("GET", "leveransvillkor.html", true);
-		request.send();
-		request.onreadystatechange = function() {
-			if(request.readyState == 4 && request.status == 200) {
-				document.getElementById("content").innerHTML = request.responseText;
-				$("#content").slideDown();
-			}
-		}
-	},600);
-}
+function showPage() {
+	$('#menu li a').click(function() {
+		var page = $(this).attr('href');
+		$("#content").slideUp();
 
-function showContact() {
-	$("#content").slideUp();
-	window.setTimeout(function() {
-		var request = new XMLHttpRequest();
-		request.open("GET", "contact.html", true);
-		request.send();
-		request.onreadystatechange = function() {
-			if(request.readyState == 4 && request.status == 200) {
-				document.getElementById("content").innerHTML = request.responseText;
-				$("#content").slideDown();
+		window.setTimeout(function() {
+			var request = new XMLHttpRequest();
+			request.open("GET", page, true);
+			request.send();
+			request.onreadystatechange = function() {
+				if(request.readyState == 4 && request.status == 200) {
+					document.getElementById("content").innerHTML = request.responseText;
+					$("#content").slideDown();
+				}
 			}
-		}
-	}, 500);
+		}, 500);
+		return false;
+	});
 }
 
 function sendForm() {
