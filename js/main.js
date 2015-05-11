@@ -90,11 +90,11 @@ function sendForm() {
 		function validateemail() {
 			var em = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 			var r = em.exec(document.getElementById("email").value);
-			if(!r) $("#email").css('outline', '1px solid red');
-			if(r) {
+			if(!r) {
+				$("#email").css('outline', '1px solid red');
+			} else if (r) {
 				$("#email").css('outline', '2px solid green');
 			} 
-			if(!r) return false;
 			else {
 				var phonepat = /^([+]46)\s*(7[0236])\s*(\d{4})\s*(\d{3})$/;
 				var result = phonepat.exec(document.getElementById("tfn").value);
