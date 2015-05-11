@@ -31,14 +31,24 @@ table {
 	height: 100px;
 }
 
+#about {
+	width: 100px;
+	height: 100px;
+}
+
 #donuts {
 	width: 100px;
 	height: 100px;
 }
 
-#deliveyr {
-width: 100px;
-		height: 100px;
+#delivery {
+	width: 100px;
+	height: 100px;
+}
+
+#contact {
+	width: 100px;
+	height: 100px;
 }
 
 #menu {
