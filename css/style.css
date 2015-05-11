@@ -1,6 +1,6 @@
 body {
 	background-color: #FFA7E3;
-	background-image: url('askdksajdksdlajsndnakxc.png');
+	background-image: url('../img/background.png');
 	background-size: cover;
 	height: 100%;
 	background-repeat: no-repeat;
@@ -12,6 +12,18 @@ h1 {
 	text-align: center;
 	font-family: "hwt-american-chromatic";
 	font-weight: normal;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing:1px;
+}
+
+table {
+	width: 100%;
 }
 
 #home {
@@ -45,14 +57,6 @@ width: 100px;
 	margin-right: 20px;
 }
 
-a {
-	text-decoration: none;
-	color: white;
-	font-weight: bold;
-	text-transform: uppercase;
-	letter-spacing:1px;
-}
-
 #menu li:last-of-type {
 	margin-right: 0;
 }
@@ -72,8 +76,4 @@ a {
 #content h1 {
 	font-family: Arial;
 	color: black;
-}
-
-table {
-	width: 100%;
 }
