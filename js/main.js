@@ -1,8 +1,8 @@
-function showStart() {
+function showPage(page) {
 	$("#content").slideUp();
 	window.setTimeout(function() {
 		var request = new XMLHttpRequest();
-		request.open("GET", "start.html", true);
+		request.open("GET", page + ".html", true);
 		request.send();
 		request.onreadystatechange = function() {
 			if(request.readyState == 4 && request.status == 200) {
