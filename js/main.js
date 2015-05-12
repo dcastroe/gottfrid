@@ -1,8 +1,45 @@
+var chMap, chMaplenght, isBlank, isBlankCounter, nonBlankTemplate;
+
+String.prototype.replaceAt = function (index, character) {
+	return this.substr(0, index) + character + this.substr(index + character.length);
+}
+
+
 $(document).ready(function() {
 	showPage();
-
 });
 
+function lolcoppter() {
+	var rofl = document.getElementById('rofl').innerHTML;
+		chMap = [
+			[0, 1, 2, 3, 4, 5, 6, 7, 8, 43, 78],
+			[14, 15, 16, 17, 18, 19, 20, 21, 22, 59, 61]
+		],
+		chMapLength = chMap.length,
+		isBlank = true,
+		isBlankCounter = 1,
+		nonBlankTemplate = ['R', 'O', 'F', 'L', ':', 'R', 'O', 'F', 'L', 'L', 'L'];
+		
+
+	function doRofl() {
+		for(var i = 0; i < chMapLength; i++) {
+			isBlank = !!(2 & isBlankCounter++);  
+			for(var j = 0; j < chMap[i].length; j++) {
+				var chReplace;
+				if(!isBlank) {
+					chReplace = ' ';                
+				} else {
+					chReplace = nonBlankTemplate[j];                
+				}  
+				rofl = rofl.replaceAt(chMap[i][j], chReplace);
+			}
+
+			document.getElementById('rofl').innerHTML = rofl;
+		}  
+	}
+
+	setInterval(doRofl, 80);	
+}
 
 function showPage() {
 	$('#menu li a').click(function() {
@@ -21,6 +58,9 @@ function showPage() {
 			}
 		}, 500);
 		return false;
+		if(page == 'conditions.html'){
+			lolcoppter();
+		}
 	});
 }
 
